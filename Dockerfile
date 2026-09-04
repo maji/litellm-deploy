@@ -38,28 +38,13 @@ ENV UV_PROJECT_ENVIRONMENT=/app/.venv \
 # Create minimal pyproject.toml for installation
 RUN mkdir -p enterprise litellm-proxy-extras
 
-# Create minimal pyproject.toml files
-RUN echo '[project]
-name = "litellm-enterprise"
-version = "0.1.0"
-requires-python = ">=3.11"
-dependencies = []' > enterprise/pyproject.toml
+# Create minimal pyproject.toml files using printf
+RUN printf '[project]\nname = "litellm-enterprise"\nversion = "0.1.0"\nrequires-python = ">=3.11"\ndependencies = []\n' > enterprise/pyproject.toml
 
-RUN echo '[project]
-name = "litellm-proxy-extras"
-version = "0.1.0"
-requires-python = ">=3.11"
-dependencies = []' > litellm-proxy-extras/pyproject.toml
+RUN printf '[project]\nname = "litellm-proxy-extras"\nversion = "0.1.0"\nrequires-python = ">=3.11"\ndependencies = []\n' > litellm-proxy-extras/pyproject.toml
 
-# Create minimal uv.lock
-RUN echo '[[package]]
-name = "litellm"
-version = "0.0.0"
-source = { editable = "." }
-dependencies = []
-
-[package.metadata]
-requires-python = ">=3.11"' > uv.lock
+# Create minimal uv.lock using printf
+RUN printf '[[package]]\nname = "litellm"\nversion = "0.0.0"\nsource = { editable = "." }\ndependencies = []\n\n[package.metadata]\nrequires-python = ">=3.11"\n' > uv.lock
 
 # Copy source
 COPY . .
@@ -87,8 +72,7 @@ COPY --from=builder /app/.venv /app/.venv
 COPY --from=builder /app/pyproject.toml /app/pyproject.toml
 
 # Create entrypoint
-RUN echo '#!/bin/bash
-exec python -m litellm.proxy.proxy_cli --port ${PORT:-4000}' > /app/entrypoint.sh && \
+RUN printf '#!/bin/bash\nexec python -m litellm.proxy.proxy_cli --port ${PORT:-4000}\n' > /app/entrypoint.sh && \
     chmod +x /app/entrypoint.sh
 
 EXPOSE 4000/tcp
