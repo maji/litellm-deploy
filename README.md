@@ -1,8 +1,8 @@
 <h1 align="center">
-        🚅 LiteLLM
+        🚅 LiteLLM (+ https://github.com/BerriAI/litellm/commit/7d5b6456baaf8be6ac1a60db2b710566b5344adf)
     </h1>
     <p align="center">
-        <p align="center">LiteLLM AI Gateway
+        <p align="center">LiteLLM AI Gateway (`--depth 1` merge from my local fork | Not Official version.)
         </p>
         <p align="center">Open Source AI Gateway for 100+ LLMs. Self-hosted. Enterprise-ready. Call any LLM in OpenAI format.</p>
         <p align="center">
