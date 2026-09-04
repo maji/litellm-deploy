@@ -641,24 +641,11 @@ Our automated checks include:
 All these checks must pass before your PR can be merged.
 
 
-# Support / talk with founders
-
-- [Schedule Demo 👋](https://calendly.com/d/4mp-gd3-k5k/berriai-1-1-onboarding-litellm-hosted-version)
-- [Community Discord 💭](https://discord.gg/wuPM9dRgDw)
-- [Community Slack 💭](https://www.litellm.ai/support)
-- Our emails ✉️ ishaan@berri.ai / krrish@berri.ai
+# Support / talk
+- Untested Version - Practice deployment.
+- [Litellm Community Discord 💭](https://discord.gg/wuPM9dRgDw)
+- [Litellm Community Slack 💭](https://www.litellm.ai/support)
+- Litellm emails ✉️ ishaan@berri.ai / krrish@berri.ai
 
 # Contributors
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-<a href="https://github.com/BerriAI/litellm/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=BerriAI/litellm" />
-</a>
+Yashpal Maji [@maji](https://github.com/maji)
