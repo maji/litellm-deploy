@@ -1,0 +1,28 @@
+# Render blueprint for LiteLLM Proxy
+# Upload the litellm-7d5b645.tar.gz as source or connect to your repo
+
+services:
+  - type: web
+    name: litellm-proxy
+    runtime: docker
+    plan: standard
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health/liveness
+    numInstances: 1
+    envVars:
+      # Required: Set your master key
+      - key: LITELLM_MASTER_KEY
+        sync: false
+      # Set your API keys (example: OpenAI)
+      - key: OPENAI_API_KEY
+        sync: false
+      # Optional: Custom port (Render assigns one automatically)
+      - key: PORT
+        value: 4000
+      # Optional: Database URL for production
+      - key: DATABASE_URL
+        sync: false
+      # Optional: Redis URL for caching
+      - key: REDIS_URL
+        sync: false
